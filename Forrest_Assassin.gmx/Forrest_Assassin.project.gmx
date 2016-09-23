@@ -8,6 +8,8 @@
   <sprites name="sprites">
     <sprite>sprites\spr_tree1</sprite>
     <sprite>sprites\spr_tree2</sprite>
+    <sprite>sprites\spr_tree3</sprite>
+    <sprite>sprites\spr_tree4</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bg_grassland</background>
@@ -15,20 +17,27 @@
   <paths name="paths"/>
   <scripts name="scripts">
     <script>scripts\scr_randomTreeSpawn.gml</script>
+    <script>scripts\scr_playerCreation.gml</script>
+    <script>scripts\script2.gml</script>
   </scripts>
   <objects name="objects">
     <objects name="trees(player)">
       <object>objects\obj_tree2</object>
       <object>objects\obj_tree1</object>
+      <object>objects\obj_tree3</object>
+      <object>objects\obj_tree4</object>
     </objects>
     <objects name="gameManager">
       <object>objects\obj_globalVar</object>
       <object>objects\obj_player</object>
       <object>objects\obj_controller</object>
+      <object>objects\obj_treeParent</object>
     </objects>
     <objects name="trees">
       <object>objects\obj_rTree1</object>
       <object>objects\obj_rTree2</object>
+      <object>objects\obj_rTree3</object>
+      <object>objects\obj_rTree4</object>
     </objects>
   </objects>
   <rooms name="rooms">

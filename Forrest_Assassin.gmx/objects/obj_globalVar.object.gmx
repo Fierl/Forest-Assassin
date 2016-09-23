@@ -30,7 +30,9 @@
 alarm_set(0,30);
 
 global.playerSpeed = 5;
-global.maxTree = 10;
+global.maxTree = 30;
+global.maxPlayer = 1;
+randomize();
 
 
 </string>

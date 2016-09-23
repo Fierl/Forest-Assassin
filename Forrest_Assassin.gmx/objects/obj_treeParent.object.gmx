@@ -25,10 +25,9 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///use TreeCreationScript &amp; playerCreationScript
+            <string>///depth
 
-scr_randomTreeSpawn();
-scr_playerCreation();
+depth = random_range(0,10)
 </string>
           </argument>
         </arguments>
