@@ -25,9 +25,94 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///depth
+            <string>///depth &amp; weapon initialisation
 
 depth = random_range(0,10);
+
+canShoot = 1;
+cherries = 0;
+banana = 0;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///can shoot to 1
+
+canShoot = 1;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="obj_banana">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///banana gets destroyed and spawns randomly
+
+with(other) instance_destroy();
+instance_create(random_range(0,1024),random_range(0,768),obj_banana)
+
+banana = banana + 1;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="obj_cherry">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///cherry gets destroyed and spawn randomly
+
+with(other)instance_destroy();
+instance_create(irandom_range(0,1024),irandom_range(0,512),obj_cherry);
+
+cherries = cherries + 3;
 </string>
           </argument>
         </arguments>
@@ -50,9 +135,12 @@ depth = random_range(0,10);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///move up
+            <string>///move up and change sprite back
 
 y = y - global.playerSpeed;
+scr_changeTreeBack();
+
+alarm_set(5,global.campingTimer);
 </string>
           </argument>
         </arguments>
@@ -75,9 +163,12 @@ y = y - global.playerSpeed;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///move down
+            <string>///move down and change sprite back
 
 y = y + global.playerSpeed;
+scr_changeTreeBack();
+
+alarm_set(5,global.campingTimer);
 </string>
           </argument>
         </arguments>
@@ -100,9 +191,12 @@ y = y + global.playerSpeed;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///move right
+            <string>///move right and change sprite back
 
 x = x + global.playerSpeed;
+scr_changeTreeBack();
+
+alarm_set(5,global.campingTimer);
 </string>
           </argument>
         </arguments>
@@ -125,9 +219,48 @@ x = x + global.playerSpeed;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///move left
+            <string>///move left and change sprite back
 
 x = x - global.playerSpeed;
+scr_changeTreeBack();
+
+alarm_set(5,global.campingTimer);
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="5" enumb="32">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///shoot
+if(canShoot == 1){
+    if(cherries &gt;= 1){
+        instance_create(x,y,obj_cherryShot);
+        cherries = cherries - 1;
+        canShoot = 0;
+        alarm_set(0,15);
+        }else if(banana &gt;= 1){
+        instance_create(x,y,obj_bananaShot);
+         banana = banana - 1;
+         canShoot = 0;
+        alarm_set(0,15);
+        };
+    }
 </string>
           </argument>
         </arguments>

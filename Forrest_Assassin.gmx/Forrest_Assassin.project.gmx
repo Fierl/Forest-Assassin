@@ -6,19 +6,50 @@
   <NewExtensions/>
   <sounds name="sound"/>
   <sprites name="sprites">
-    <sprite>sprites\spr_tree1</sprite>
-    <sprite>sprites\spr_tree2</sprite>
-    <sprite>sprites\spr_tree3</sprite>
-    <sprite>sprites\spr_tree4</sprite>
+    <sprites name="trees">
+      <sprite>sprites\spr_tree4</sprite>
+      <sprite>sprites\spr_tree3</sprite>
+      <sprite>sprites\spr_tree2</sprite>
+      <sprite>sprites\spr_tree1</sprite>
+      <sprite>sprites\spr_tree5</sprite>
+      <sprite>sprites\spr_tree6</sprite>
+    </sprites>
+    <sprites name="weapons">
+      <sprite>sprites\spr_cherry</sprite>
+      <sprite>sprites\spr_cherryShot</sprite>
+      <sprite>sprites\spr_banana</sprite>
+      <sprite>sprites\spr_bananaShot</sprite>
+    </sprites>
+    <sprites name="camping_trees">
+      <sprite>sprites\spr_cTree</sprite>
+      <sprite>sprites\spr_cTree2</sprite>
+      <sprite>sprites\spr_cTree3</sprite>
+      <sprite>sprites\spr_cTree4</sprite>
+      <sprite>sprites\spr_cTree5</sprite>
+      <sprite>sprites\spr_cTree6</sprite>
+    </sprites>
+    <sprites name="Menu">
+      <sprite>sprites\spr_start</sprite>
+      <sprite>sprites\spr_startHoover</sprite>
+      <sprite>sprites\spr_exit</sprite>
+      <sprite>sprites\spr_exitHoover</sprite>
+      <sprite>sprites\spr_options</sprite>
+      <sprite>sprites\spr_optionsHoover</sprite>
+    </sprites>
   </sprites>
   <backgrounds name="background">
     <background>background\bg_grassland</background>
+    <background>background\bg_menu</background>
   </backgrounds>
-  <paths name="paths"/>
+  <paths name="paths">
+    <path>paths\p_banana</path>
+  </paths>
   <scripts name="scripts">
     <script>scripts\scr_randomTreeSpawn.gml</script>
     <script>scripts\scr_playerCreation.gml</script>
-    <script>scripts\script2.gml</script>
+    <script>scripts\scr_nearRandomSpawn.gml</script>
+    <script>scripts\scr_changeTreeBack.gml</script>
+    <script>scripts\scr_randomWeapons.gml</script>
   </scripts>
   <objects name="objects">
     <objects name="trees(player)">
@@ -26,22 +57,39 @@
       <object>objects\obj_tree1</object>
       <object>objects\obj_tree3</object>
       <object>objects\obj_tree4</object>
+      <object>objects\obj_tree5</object>
+      <object>objects\obj_tree6</object>
     </objects>
     <objects name="gameManager">
       <object>objects\obj_globalVar</object>
       <object>objects\obj_player</object>
       <object>objects\obj_controller</object>
       <object>objects\obj_treeParent</object>
+      <object>objects\obj_weapon</object>
     </objects>
     <objects name="trees">
       <object>objects\obj_rTree1</object>
       <object>objects\obj_rTree2</object>
       <object>objects\obj_rTree3</object>
       <object>objects\obj_rTree4</object>
+      <object>objects\obj_rTree5</object>
+      <object>objects\obj_rTree6</object>
+    </objects>
+    <objects name="weapons">
+      <object>objects\obj_cherry</object>
+      <object>objects\obj_cherryShot</object>
+      <object>objects\obj_banana</object>
+      <object>objects\obj_bananaShot</object>
+    </objects>
+    <objects name="Menu">
+      <object>objects\obj_start</object>
+      <object>objects\obj_exit</object>
+      <object>objects\obj_options</object>
     </objects>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_splash</room>
+    <room>rooms\rm_menu</room>
     <room>rooms\rm_main</room>
   </rooms>
   <help>

@@ -25,10 +25,11 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///use TreeCreationScript &amp; playerCreationScript
+            <string>///use TreeCreationScript &amp; playerCreationScript &amp; weaponCreation script
 
 scr_randomTreeSpawn();
 scr_playerCreation();
+scr_randomWeapons();
 </string>
           </argument>
         </arguments>

@@ -30,8 +30,12 @@
 alarm_set(0,30);
 
 global.playerSpeed = 5;
-global.maxTree = 30;
+global.maxTree = 50;
 global.maxPlayer = 1;
+global.hasCherry = 0;
+global.campingTimer = 90;
+
+
 randomize();
 
 
@@ -59,7 +63,7 @@ randomize();
             <kind>1</kind>
             <string>///change room
 
-room_goto(rm_main);
+room_goto(rm_menu);
 </string>
           </argument>
         </arguments>
