@@ -11,6 +11,35 @@
     <event eventtype="0" enumb="0">
       <action>
         <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///change path angle
+if(mouse_x&gt;x&amp;&amp;mouse_y &gt;y){
+    path_rotate(p_banana,315);}
+    else if(mouse_x&gt;x&amp;&amp;mouse_y&lt;y){
+    path_rotate(p_banana,45);}
+    else if(mouse_x&lt;x&amp;&amp;mouse_y&gt;y){
+    path_rotate(p_banana,135)}
+    else if(mouse_x&lt;x&amp;&amp;mouse_y&lt;y){
+    path_rotate(p_banana,225);}
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
         <id>119</id>
         <kind>0</kind>
         <userelative>0</userelative>
@@ -63,6 +92,31 @@ image_speed = 1;
 
 canAttack = 0;
 alarm_set(0,15)
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///play sound
+
+if(global.effectsOn == true){
+    action_sound(snd_cherry,0)
+    }
 </string>
           </argument>
         </arguments>

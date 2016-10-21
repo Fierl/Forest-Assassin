@@ -4,7 +4,11 @@
     <Config>Configs\Default</Config>
   </Configs>
   <NewExtensions/>
-  <sounds name="sound"/>
+  <sounds name="sound">
+    <sound>sound\snd_backgroundBirds</sound>
+    <sound>sound\snd_banana</sound>
+    <sound>sound\snd_cherry</sound>
+  </sounds>
   <sprites name="sprites">
     <sprites name="trees">
       <sprite>sprites\spr_tree4</sprite>
@@ -19,6 +23,7 @@
       <sprite>sprites\spr_cherryShot</sprite>
       <sprite>sprites\spr_banana</sprite>
       <sprite>sprites\spr_bananaShot</sprite>
+      <sprite>sprites\spr_crossHair</sprite>
     </sprites>
     <sprites name="camping_trees">
       <sprite>sprites\spr_cTree</sprite>
@@ -36,10 +41,14 @@
       <sprite>sprites\spr_options</sprite>
       <sprite>sprites\spr_optionsHoover</sprite>
     </sprites>
+    <sprites name="nature">
+      <sprite>sprites\spr_trench</sprite>
+    </sprites>
   </sprites>
   <backgrounds name="background">
     <background>background\bg_grassland</background>
     <background>background\bg_menu</background>
+    <background>background\bg_gras</background>
   </backgrounds>
   <paths name="paths">
     <path>paths\p_banana</path>
@@ -51,6 +60,9 @@
     <script>scripts\scr_changeTreeBack.gml</script>
     <script>scripts\scr_randomWeapons.gml</script>
   </scripts>
+  <fonts name="fonts">
+    <font>fonts\fnt_one</font>
+  </fonts>
   <objects name="objects">
     <objects name="trees(player)">
       <object>objects\obj_tree2</object>
@@ -85,6 +97,12 @@
       <object>objects\obj_start</object>
       <object>objects\obj_exit</object>
       <object>objects\obj_options</object>
+    </objects>
+    <objects name="Bots">
+      <object>objects\obj_bot</object>
+    </objects>
+    <objects name="Nature">
+      <object>objects\obj_trench</object>
     </objects>
   </objects>
   <rooms name="rooms">

@@ -25,11 +25,63 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///use TreeCreationScript &amp; playerCreationScript &amp; weaponCreation script
+            <string>///use TreeCreationScript &amp; playerCreationScript &amp; weaponCreation script &amp; set font
 
 scr_randomTreeSpawn();
 scr_playerCreation();
 scr_randomWeapons();
+
+draw_set_font(fnt_one);
+draw_set_colour("red");
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>801</id>
+        <kind>0</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>0</useapplyto>
+        <exetype>1</exetype>
+        <functionname>action_set_cursor</functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>5</kind>
+            <sprite>spr_crossHair</sprite>
+          </argument>
+          <argument>
+            <kind>4</kind>
+            <string>0</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///play background birds
+
+if(global.soundOn == true){
+    action_sound(snd_backgroundBirds,1)
+    }
 </string>
           </argument>
         </arguments>

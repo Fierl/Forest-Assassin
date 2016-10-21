@@ -32,9 +32,11 @@ alarm_set(0,30);
 global.playerSpeed = 5;
 global.maxTree = 50;
 global.maxPlayer = 1;
-global.hasCherry = 0;
 global.campingTimer = 90;
 
+//sounds
+global.soundOn = true;
+global.effectsOn =  true;
 
 randomize();
 
