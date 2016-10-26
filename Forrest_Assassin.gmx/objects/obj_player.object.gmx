@@ -25,7 +25,9 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///depth &amp; weapon initialisation
+            <string>///depth &amp; weapon initialisation &amp; image speed
+
+image_speed = 0;
 
 depth = random_range(0,10);
 
@@ -33,6 +35,34 @@ kills = 0;
 canShoot = 1;
 cherries = 0;
 banana = 0;
+onion = 0;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="2">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///set image_speed back
+
+image_speed = 0;
+
+
 </string>
           </argument>
         </arguments>
@@ -58,6 +88,34 @@ banana = 0;
             <string>///can shoot to 1
 
 canShoot = 1;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="obj_onion">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///onion gets destroyed and spawns randomly
+
+with(other) instance_destroy();
+instance_create(random_range(0,1024),random_range(0,768),obj_onion)
+
+onion = onion + 1;
 </string>
           </argument>
         </arguments>
@@ -142,6 +200,10 @@ y = y - global.playerSpeed;
 scr_changeTreeBack();
 
 alarm_set(5,global.campingTimer);
+
+image_speed = 0.8;
+
+alarm_set(2,5);
 </string>
           </argument>
         </arguments>
@@ -170,6 +232,10 @@ y = y + global.playerSpeed;
 scr_changeTreeBack();
 
 alarm_set(5,global.campingTimer);
+
+image_speed = 0.8;
+
+alarm_set(2,5);
 </string>
           </argument>
         </arguments>
@@ -198,6 +264,10 @@ x = x + global.playerSpeed;
 scr_changeTreeBack();
 
 alarm_set(5,global.campingTimer);
+
+image_speed = 0.8;
+
+alarm_set(2,5);
 </string>
           </argument>
         </arguments>
@@ -226,6 +296,10 @@ x = x - global.playerSpeed;
 scr_changeTreeBack();
 
 alarm_set(5,global.campingTimer);
+
+image_speed = 0.8;
+
+alarm_set(2,5);
 </string>
           </argument>
         </arguments>
@@ -260,7 +334,13 @@ if(canShoot == 1){
          banana = banana - 1;
          canShoot = 0;
         alarm_set(0,15);
-        };
+        }else if (onion &gt;= 1){
+        instance_create(x,y,obj_onionTrap)
+        onion = onion - 1;
+        canShoot = 0;
+        alarm_set(0,15);
+        }
+        
     }
 </string>
           </argument>
@@ -287,10 +367,16 @@ if(canShoot == 1){
             <string>draw_text(0,0,"Kills:" + string(kills));
 
 if(cherries &gt;= 1){
-    draw_text(0,32,"Cherries:" + string(cherries));}
+    //draw_set_color(c_red);
+    draw_text_color(0,32,"Cherries:" + string(cherries),c_red,c_red,c_red,c_red,1);}
 
 if(banana &gt;= 1){
-    draw_text(0,64,"Bananas:" + string(banana));}
+    //draw_set_color(c_yellow);
+    draw_text_color(0,64,"Banana" + string(banana),c_yellow,c_yellow,c_yellow,c_yellow,1);}
+
+if(onion &gt;= 1){
+    //draw_set_color(c_maroon);
+    draw_text_color(0,96,"Onions:" + string(onion),c_fuchsia,c_fuchsia,c_fuchsia,c_fuchsia,1);}
 </string>
           </argument>
         </arguments>

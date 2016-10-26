@@ -27,7 +27,9 @@
             <kind>1</kind>
             <string>///depth
 
-depth = random_range(0,10)
+depth = random_range(0,10);
+
+image_speed = 0;
 </string>
           </argument>
         </arguments>
